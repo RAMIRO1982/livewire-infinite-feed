@@ -1,0 +1,21 @@
+{
+  "name": "ramiro1982/livewire-infinite-feed",
+  "description": "Livewire infinite scroll feed component",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "RAMIRO1982\\LivewireInfiniteFeed\\": "src/"
+    }
+  },
+  "require": {
+    "livewire/livewire": "^3.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "RAMIRO1982\\LivewireInfiniteFeed\\LivewireInfiniteFeedServiceProvider"
+      ]
+    }
+  }
+}
