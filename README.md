@@ -37,9 +37,18 @@ If it's not yet published on Packagist, you can add it manually in your project'
 
 - `per-page` *(int)*: Number of items per scroll (default: 10)
 - `view` *(string)*: Blade view name to render each item
+- `with` *(array)*: Relationships to eager load
 
+⚠️ Use the `:` prefix in Blade to pass the with parameter as a PHP array:
+```blade
+<livewire:infinite-feed 
+    model="App\\Models\\Post" 
+    :with="['author', 'tags']"
+/>
+```
 
-Example with custom view:
+## 🎨 Customizing the View
+You can customize the item rendering by providing a view prop:
 
 ```blade
 <livewire:infinite-feed 
@@ -48,7 +57,7 @@ Example with custom view:
 />
 ```
 
-## 🎨 Overriding the Default View
+## 🧩 Overriding the Default View
 You can override the built-in view by placing a file in your Laravel app at:
 
 `resources/views/vendor/infinite-feed/feed.blade.php`
