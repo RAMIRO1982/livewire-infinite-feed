@@ -7,7 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [0.1.1] - 2025-06-29
+## [v0.2.1] - 2025-06-29
+
+### Added
+- Support for `cursorPaginate()` instead of traditional pagination
+- Alpine `x-intersect` support for infinite scroll
+- Publishing support via `php artisan vendor:publish --tag=views`
+- Documentation: updated README with advanced usage examples
+
+### Fixed
+- Improved internal structure for more reliable pagination handling
+
+---
+
+## [v0.1.1] - 2025-06-29
 
 ### Added
 - Support for the `with` prop to eager load Eloquent relationships
@@ -16,7 +29,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [0.1.0] - 2025-06-27
+## [v0.1.0] - 2025-06-27
 
 ### Added
 - Initial release of the Livewire Infinite Feed component

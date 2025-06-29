@@ -1,24 +1,14 @@
-<div
-        x-data="{
-        observe() {
-            let observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        $wire.set('page', $wire.page + 1)
-                    }
-                });
-            }, { threshold: 1.0 });
-            observer.observe(this.$el);
-        }
-    }"
-        x-init="observe()"
-        wire:init="render"
->
-    @foreach ($items as $item)
+<div>
+    @foreach ($this->items as $item)
         <div class="p-4 border-b">{{ $item->title ?? 'No title' }}</div>
     @endforeach
 
-    @if ($items->hasMorePages())
-        <div class="p-4 text-center text-gray-500">Loading more...</div>
+    @if ($this->hasMorePages)
+        <div x-data x-intersect.full.once="() => { if (!@this.loading) $wire.loadMore(); }" class="h-1 translate-y-32"
+             wire:ignore.self></div>
+
+        <div wire:loading.flex wire:target="loadMore" class="flex justify-center items-center w-full">
+            <flux:icon.loading class="size-8"/>
+        </div>
     @endif
 </div>

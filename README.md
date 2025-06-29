@@ -58,11 +58,13 @@ You can customize the item rendering by providing a view prop:
 ```
 
 ## 🧩 Overriding the Default View
-You can override the built-in view by placing a file in your Laravel app at:
+You can customize the item rendering by publishing the Blade view file into your Laravel app:
 
-`resources/views/vendor/infinite-feed/feed.blade.php`
-
-Laravel will use this file instead of the default one included in the package.
+```bash
+php artisan vendor:publish --tag=views
+```
+This will copy the view file to:
+`resources/views/vendor/infinite-feed/feed.blade.php`. The default view uses [Tailwind CSS](https://tailwindcss.com/) and [Flux UI](https://fluxui.dev) components.
 
 ## ⚙️ Requirements
 This component requires Alpine.js to handle scroll detection.
