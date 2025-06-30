@@ -18,7 +18,5 @@
         "RAMIRO1982\\LivewireInfiniteFeed\\LivewireInfiniteFeedServiceProvider"
       ]
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
