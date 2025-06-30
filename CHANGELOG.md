@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.4.1] - 2025-06-30
+
+### Changed
+- Updated README with guidance on using `orderByDesc('id')` for proper pagination behavior.
+
+### Fixed
+- Ensured items are appended correctly on scroll by enforcing ordering in query builder.
+
+
 ## [0.4.0] - 2025-06-30
 
 ### Added

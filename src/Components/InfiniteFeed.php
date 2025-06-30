@@ -67,7 +67,7 @@ class InfiniteFeed extends Component
 
         return $modelClass::query()
             ->when($this->itemId, fn($query) => $query->where('id', $this->itemId))
-            ->latest();
+            ->orderByDesc('id');
     }
 
     private function addWith($query)
