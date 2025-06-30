@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [v0.3.0] - 2025-06-30
+
+### Added
+- Support for `placeholder` view via Livewire's `lazy` loading mechanism
+- New public `placeholder()` method in the component
+- Automatic feed refreshing when dispatching the `item-added` event, via built‑in `$listeners`
+- `placeholder` parameter documented in README
+- Published `placeholder.blade.php` view
+
+---
+
 ## [v0.2.1] - 2025-06-29
 
 ### Added
