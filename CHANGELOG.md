@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.4.0] - 2025-06-30
+
+### Added
+- Required parameter `item-view` to define the Blade partial used for rendering each item.
+- Automatic variable name generation based on model class name (e.g., `Post` → `post`) when passing item to the included view.
+- Placeholder support for lazy loading via the `placeholder` parameter and Livewire’s `placeholder()` method.
+- Added listener for `item-added` event to automatically refresh the feed.
+
+### Changed
+- Removed optional full view override (`view` parameter) to simplify usage. Now only `item-view` is required and used inside a consistent feed layout.
+
+### Fixed
+- Clarified README instructions for required and optional parameters.
+- Improved README structure and usage examples.
+
+### Removed
+- Removed ability to override the entire feed layout via `view` parameter to enforce a consistent structure.
+
+---
+
 ## [v0.3.0] - 2025-06-30
 
 ### Added

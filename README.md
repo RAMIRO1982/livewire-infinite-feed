@@ -11,31 +11,31 @@ Ideal for feeds, post-listings, news pages, and more.
 You can install the package via Composer:
 
 ```bash
-composer require ramiro1982/livewire-infinite-feed:^0.3.1
-```
-If it's not yet published on Packagist, you can add it manually in your project's composer.json:
-
-```json
-"repositories": [
-  {
-    "type": "vcs",
-    "url": "https://github.com/RAMIRO1982/livewire-infinite-feed"
-  }
-]
+composer require ramiro1982/livewire-infinite-feed:^0.4.0
 ```
 
 ## 🧑‍💻 Basic Usage
 
 ```blade
 <livewire:infinite-feed 
-    model="App\\Models\\Post" 
+    model="App\\Models\\Post"
+    item-view="components.post" 
     per-page="10" 
 />
 ```
 
-## ⚙️ Props
+## 🛠️ Required Parameters
+- `model` (string): Fully qualified class name of the Eloquent model.
+- `item-view` (string): Blade partial used to render each item in the feed.
+
+When rendering, the component will include your partial like this:
+```blade
+@include($this->itemView, ['post' => $item])
+```
+ℹ️ The variable name (e.g., `post`) is derived from the model name in lowercase.
+
+## ⚙️ Optional Parameters
 - `per-page` *(int)*: Number of items per scroll (default: 10)
-- `view` *(string)*: Blade view name to render each item
 - `placeholder` *(string)*: View shown as placeholder during lazy loading — requires using the `lazy` attribute
 - `with` *(array)*: Relationships to eager load
 
@@ -43,17 +43,8 @@ If it's not yet published on Packagist, you can add it manually in your project'
 ```blade
 <livewire:infinite-feed 
     model="App\\Models\\Post" 
+    item-view="components.post"
     :with="['author', 'tags']"
-/>
-```
-
-## 🎨 Customizing the View
-You can customize the item rendering by providing a custom Blade view:
-
-```blade
-<livewire:infinite-feed 
-    model="App\\Models\\Post" 
-    view="components.post" 
 />
 ```
 
@@ -62,6 +53,7 @@ To show a placeholder while the component loads, provide a custom view and use `
 ```blade
 <livewire:infinite-feed 
     model="App\\Models\\Post"
+    item-view="components.post"
     placeholder="components.feed-placeholder"
     lazy
 />

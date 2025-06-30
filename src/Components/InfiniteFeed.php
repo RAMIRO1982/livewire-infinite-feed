@@ -15,7 +15,7 @@ class InfiniteFeed extends Component
     public array $with = [];
     public int $perPage = 10;
     public ?string $placeholder = null;
-    public ?string $view = null;
+    public ?string $itemView = null;
     public $cursor = null;
     public bool $hasMorePages = true;
     public array $items = [];
@@ -29,6 +29,10 @@ class InfiniteFeed extends Component
     {
         if (!class_exists($this->model)) {
             throw new \InvalidArgumentException("Model class [{$this->model}] does not exist.");
+        }
+
+        if (empty($this->itemView)) {
+            throw new \InvalidArgumentException("The [itemView] parameter is required to render each feed item.");
         }
 
         $this->with = array_filter($this->with);
@@ -54,7 +58,7 @@ class InfiniteFeed extends Component
 
     public function render()
     {
-        return View::make($this->view ?? 'infinite-feed::feed');
+        return View::make('infinite-feed::feed');
     }
     
     private function createQuery()
@@ -85,4 +89,8 @@ class InfiniteFeed extends Component
         $this->items =  array_merge($this->items, $results->items());
     }
 
+    private function getItemVariableName(): string
+    {
+        return strtolower(class_basename($this->model));
+    }
 }
