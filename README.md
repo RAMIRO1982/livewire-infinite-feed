@@ -11,7 +11,7 @@ Ideal for feeds, post-listings, news pages, and more.
 You can install the package via Composer:
 
 ```bash
-composer require ramiro1982/livewire-infinite-feed:^0.3.0
+composer require ramiro1982/livewire-infinite-feed:^0.3.1
 ```
 If it's not yet published on Packagist, you can add it manually in your project's composer.json:
 
