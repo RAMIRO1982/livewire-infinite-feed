@@ -95,6 +95,14 @@ Alpine.start()
 ## 🔄 Refreshing the Feed
 If your application allows creating new items via another component, you can automatically refresh the feed by dispatching the `item-added` event.
 
+## 🙌 Created by
+
+Made with 💻 and ☕ by [Ramiro Rimoldi](https://github.com/RAMIRO1982)
+
+## 🤝 Contributing
+
+Pull requests and suggestions are welcome! If you find a bug or want to add a feature, feel free to open an issue or PR.
+
 ---
 ## 📄 License
 MIT © [RAMIRO1982](https://github.com/RAMIRO1982)
