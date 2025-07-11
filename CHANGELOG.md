@@ -7,7 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ---
 
+## [0.4.3] - 2025-06-30
+
+---
+
+### Fixed
+- Listener for `item-added` event now correctly refreshes the feed after new items are added.
+
 ## [0.4.2] - 2025-06-30
+
+---
 
 ### Fixed
 - Ensured items are appended correctly on scroll after many items have been loaded.
@@ -17,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 ### Fixed
 - Ensured items are appended correctly on scroll by enforcing ordering in query builder.
 
+---
 
 ## [0.4.0] - 2025-06-30
 

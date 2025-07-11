@@ -22,7 +22,7 @@ class InfiniteFeed extends Component
     public bool $loading = false;
 
     protected $listeners = [
-        'item-added' => '$refresh',
+        'item-added' => 'handleItemAdded',
     ];
 
     public function mount(): void
@@ -54,6 +54,13 @@ class InfiniteFeed extends Component
         $this->loading = true;
         $this->addItems($query);
         $this->loading = false;
+    }
+
+    public function handleItemAdded()
+    {
+        $this->resetCursor();
+        $this->items = [];
+        $this->loadMore();
     }
 
     public function render()
@@ -92,5 +99,11 @@ class InfiniteFeed extends Component
     private function getItemVariableName(): string
     {
         return strtolower(class_basename($this->model));
+    }
+
+    private function resetCursor(): void
+    {
+        $this->cursor = null;
+        $this->hasMorePages = true;
     }
 }
